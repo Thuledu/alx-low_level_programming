@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# Parse Apache log file and group visitors by IP and HTTP status code
+awk '{count[$1" "$9]++}END{for (i in count) print count[i], i}' access.log |
+
+# Sort the data in descending order by number of occurrences
+sort -rn |
+
+# Display the data in the specified format
+awk '{printf "%-15s %-10s %s\n", $1, $2, $3}'
