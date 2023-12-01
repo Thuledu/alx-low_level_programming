@@ -9,22 +9,23 @@
  *
  * Return: A pointer to the newly created hash table, or NULL if an error occurred
  */
+
 hash_table_t *hash_table_create(unsigned long int size)
 {
-	hash_table_t *hash_table;
+	hash_table_t *table = NULL;
 
-	hash_table = malloc(sizeof(hash_table_t));
-	if (hash_table == NULL)
+	table = malloc(sizeof(hash_table_t));
+	if (table == NULL)
 		return (NULL);
 
-	hash_table->size = size;
-	hash_table->entries = calloc(size, sizeof(hash_table_entry_t *));
-	if (hash_table->entries == NULL)
+	table->size = size;
+	table->array = calloc(size, sizeof(hash_node_t *));
+	if (table->array == NULL)
 	{
-		free(hash_table);
+		free(table);
 		return (NULL);
 	}
 
-	return (hash_table);
+	return (table);
 }
 
