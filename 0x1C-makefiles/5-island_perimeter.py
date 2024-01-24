@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""5-island_perimeter.py"""
 
 def island_perimeter(grid):
     """
@@ -9,12 +10,6 @@ def island_perimeter(grid):
 
     Returns:
     int: The perimeter of the island.
-
-    Constraints:
-    - Grid cells are connected horizontally/vertically (not diagonally).
-    - Grid is rectangular, with width and height not exceeding 100.
-    - Grid is completely surrounded by water, and there is one island (or nothing).
-    - The island doesn’t have "lakes" (water inside that isn’t connected to the water around the island).
     """
 
     perimeter = 0
